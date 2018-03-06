@@ -1,0 +1,41 @@
+package cn.itcast.day1;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
+/*
+ * 字节输出流：OutputStream
+ * 		00000000 00000000 00000000 0000 1111  15
+ * 
+ * 文件字节输出流：FileOutputStream
+ * 		构造方法：
+ * 			public FileOutputStream(File file)throws FileNotFoundException  写出是覆盖操作，不是追加。
+ * 			public FileOutputStream(String name)throws FileNotFoundException  写出是覆盖操作，不是追加。
+ * 			public FileOutputStream(File file,boolean append)throws FileNotFoundException  布尔值为true，写出追加操作。
+ * 			public FileOutputStream(String name,boolean append)throws FileNotFoundException  布尔值为true，写出追加操作。
+ * 		主要方法：
+ * 			public void write(int b) throws IOException  写出一个字节    
+ * 			public void write(byte[] b) throws IOException  写出一个字节数组
+ * 
+ * 		注意：
+ * 			1：使用(File file)与(String name)参数的构造方法，写出是覆盖操作。
+ * 			      使用(File file,boolean append)与(String name,boolean append)参数的构造方法，写出是追加操作。
+ * 			2:使用一次一个字节的方式，无法直接输出中文。可以使用一次一个字节数组的方式。
+ * 			3：如果写出目标的这个文件不存在，则直接创建一个文件，再写出。
+ */
+public class Demo02OutputStream {
+	public static void main(String[] args) throws IOException {
+		FileOutputStream out = new FileOutputStream("test.txt",true);
+		String str = "欢迎你";
+		byte[] bs = str.getBytes();
+		for (int i = 0; i < bs.length; i++) {
+			out.write(bs[i]);
+
+		}
+		out.close();
+	}
+
+}

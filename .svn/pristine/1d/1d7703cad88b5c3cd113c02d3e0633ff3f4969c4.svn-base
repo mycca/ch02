@@ -1,0 +1,22 @@
+package cn.itcast.day1;
+
+/*
+ *	高效字节流：
+ *		BufferedInputStream
+ *		BufferedOutputStream
+ *
+ *		构造方法：
+ *			均要一个对应的流对象
+ * 高效字符输出流：
+ * 		BufferedWriter：
+ * 			public void newLine() throws IOException  换行
+ * 
+
+ * 高效字符输入流：
+ * 		BufferedReader：
+ * 			public String readLine() throws IOException  读取时，判断回车，一次读取一行，返回值不包括回车
+ */
+ 
+public class Demo04Buffere {
+
+}
